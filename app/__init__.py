@@ -6,6 +6,7 @@ from flask_bcrypt import Bcrypt
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 from flask_babel import Babel
+# from flask_socketio import SocketIO
 
 
 db = SQLAlchemy()
@@ -14,6 +15,7 @@ login_manager = LoginManager()
 bcrypt = Bcrypt()
 admin = Admin(name="Flask Administrations")
 babel = Babel()
+# socketio = SocketIO()
 
 
 def create_app(config_class = "config.Config"):
@@ -26,6 +28,7 @@ def create_app(config_class = "config.Config"):
     login_manager.init_app(app)
     bcrypt.init_app(app)
     babel.init_app(app)
+    # socketio.init_app(app)
 
     login_manager.login_view = 'app.auth.login'
 
